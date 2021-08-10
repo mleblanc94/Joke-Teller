@@ -2,7 +2,7 @@ let button = document.getElementById('button');
 
 
 async function getJoke() {
-    let apiUrl = 'https://v2.jokeapi.dev/joke/';
+    let apiUrl = 'https://v2.jokeapi.dev/joke/Any';
        try {
      const response = await fetch(apiUrl);
      apiJoke = await response.json();
@@ -12,10 +12,4 @@ async function getJoke() {
   }
 }
 
-  getJoke();
-
-let buttonClick = () => {
-    console.log('it works');
-}
-
-button.addEventListener('click', buttonClick);
+button.addEventListener('click', getJoke);
