@@ -12,8 +12,10 @@ async function getJoke() {
   }
 }
 
+let apiKey = '5a8a2d8d903a4e34849dbb2a8d863518';
+
 async function sayJoke() {
-    const apiUrl2 = 'http://api.voicerss.org/?key=1234567890QWERTY&hl=en-us&src=Hello, world!';
+    const apiUrl2 = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=Hello, world!`;
     try {
       const response2 = await fetch(apiUrl2);
       apiSpeech = await response2.json();
