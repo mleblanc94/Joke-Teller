@@ -12,4 +12,14 @@ async function getJoke() {
   }
 }
 
-button.addEventListener('click', getJoke);
+async function sayJoke() {
+    const apiUrl2 = 'http://api.voicerss.org/?key=1234567890QWERTY&hl=en-us&src=Hello, world!';
+    try {
+      const response2 = await fetch(apiUrl2);
+      apiSpeech = await response2.json();
+    } catch(error) {
+        console.log('Sorry, there was an error')
+    }
+}
+
+button.addEventListener('click', sayJoke);
