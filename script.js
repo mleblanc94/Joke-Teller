@@ -8,6 +8,8 @@ async function getJoke() {
      const response = await fetch(apiUrl);
      apiJoke = await response.json();
      console.log(apiJoke);
+
+     test();
   } catch(error) {
       console.log('Sorry, there was an error.');
   }
@@ -18,7 +20,7 @@ var VoiceRSS={speech:function(e){this._validate(e),this._request(e)},_validate:f
 function test() {
   VoiceRSS.speech({
     key: '5a8a2d8d903a4e34849dbb2a8d863518',
-    src: 'Hello, world!',
+    src: 'Hello World',
     hl: 'en-us',
     v: 'Linda',
     r: 0, 
@@ -29,18 +31,5 @@ function test() {
 }
 
 test();
-
-// async function sayJoke() {
-//     const apiUrl2 = 'http://api.voicerss.org/?key=5a8a2d8d903a4e34849dbb2a8d863518&hl=en-us&src=Hello, world!';
-//     try {
-//       const response2 = await fetch(apiUrl2);
-//       apiSpeech = await response2.json();
-//       console.log(apiSpeech);
-//     } catch(error) {
-//         console.log('Sorry, there was an error')
-//     }
-// }
-
-// sayJoke();
 
 button.addEventListener('click', getJoke);
